@@ -1,46 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Cainejunkazama.github.io by cainejunkazama</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <title>Curriculum Vitae</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="res/css/bootstrap.min.css" rel="stylesheet" media="screen">
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/cainejunkazama">View On GitHub</a></li>
-        </nav>
-      </div><!-- end header -->
-
-    <div class="wrapper">
-
-      <section>
-        <div id="title">
-          <h1>Cainejunkazama.github.io</h1>
-          <p></p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/cainejunkazama">cainejunkazama</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+  <div class="row">
+    <aside class="col-lg-3">
+      <div class="well">
+        <div class="row">
+        <div class="col-sm-6">
+          <img src="http://placehold.it/150x150" class="img-thumbnail">
         </div>
-
-        <h1>
-<a name="cainejunkazamagithubio" class="anchor" href="#cainejunkazamagithubio"><span class="octicon octicon-link"></span></a>cainejunkazama.github.io</h1>
-      </section>
-
+        <div class="col-sm-6">
+          <p class="lead">Curriculum Vitae</p>
+          <p>Sascha Trebbin</p>
+        </div>
+        </div>
+        <hr></hr>
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="#profile" data-toggle="tab">Angaben zur Person</a></li>
+          <li><a href="#experience" data-toggle="tab">Berufserfahrung</a></li>
+          <li><a href="#school" data-toggle="tab">Schul- und Berufsausbildung</a></li>
+          <li><a href="#additional" data-toggle="tab">Weitere Angaben</a></li>
+        </ul>
+      </div>
+    </aside>
+    <div class="col-lg-9 tab-content">
+      <div id="profile" class="tab-pane">
+        Angaben zur Person
+      </div>
+      <div id="experience" class="tab-pane">
+        Berufserfahrung
+      </div>
+      <div id="school" class="tab-pane">
+        Schul- und Berufserfahrung
+      </div>
+      <div id="additional" class="tab-pane">
+        Weitere Angaben
+      </div>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+  </div>
     
+
+    <!-- JavaScript plugins (requires jQuery) -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="res/js/bootstrap.min.js"></script>
+
+    <!-- Optionally enable responsive features in IE8 -->
+    <!--<script src="js/respond.js"></script>-->
+    <script type="text/javascript">
+      function resizeSideBar() {
+        vph = $(window).height();
+        $('aside.col-lg-3>div.well').css({'margin-bottom': 0})
+        $('aside.col-lg-3>div.well').css({'height': vph});
+      }
+      
+      $(document).ready(function(){
+        $('hr').css({'border-top': '10px solid #6F6F6F'})
+        resizeSideBar();
+      });
+
+      window.onresize = function(event) {
+        resizeSideBar();
+      }
+
+      
+    </script>
   </body>
 </html>
