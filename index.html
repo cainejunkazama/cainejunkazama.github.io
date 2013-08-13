@@ -9,74 +9,116 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   </head>
   <body>
-    <div class="row">
-      <aside class="col-lg-3">
-        <div class="sidebar col-10">
-          <div class="row">
-            <div class="col-sm-6">
-              <img src="http://placehold.it/150x150" class="img-thumbnail">
-            </div>
-            <div class="col-sm-6">
-              <p class="lead">Curriculum Vitae</p>
-              <p>Sascha Trebbin</p>
-            </div>
-          </div>
-          <hr></hr>
-          <ul class="nav nav-pills nav-stacked">
-            <li><a href="#profile" data-toggle="tab">Angaben zur Person</a></li>
-            <li><a href="#experience" data-toggle="tab">Berufserfahrung</a></li>
-            <li><a href="#school" data-toggle="tab">Schul- und Berufsausbildung</a></li>
-            <li><a href="#additional" data-toggle="tab">Weitere Angaben</a></li>
-          </ul>
-          <hr></hr>
+    <div class="container">
+      <div class="row">
+        <header class="dokumentendaten" id="kopfzeile">
+          
+        </header>
+        <div id="dokument">
+          <section class="bereich">
+            <article class="kategorie row">
+              <div class="links col-lg-3"></div>
+              <div class="rechts col-lg-9"></div>
+            </article>
+          </section>
+
         </div>
-        <div class="col-2 sidebar-slider">
-          <i class="icon-angle-left icon-3x"></i>
-        </div>
-      </aside>
-      <div class="col-lg-9 tab-content">
-        <div id="profile" class="tab-pane">
-          Angaben zur Person
-        </div>
-        <div id="experience" class="tab-pane">
-          Berufserfahrung
-        </div>
-        <div id="school" class="tab-pane">
-          Schul- und Berufserfahrung
-        </div>
-        <div id="additional" class="tab-pane">
-          Weitere Angaben
-        </div>
+
+        <footer class="dokumentendaten" id="fusszeile">
+          
+        </footer>
       </div>
     </div>
-    
 
     <!-- JavaScript plugins (requires jQuery) -->
     <script src="//use.edgefonts.net/source-code-pro.js"></script>
     <script src="http://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="res/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
+    <script type="text/template">
+       <!-- BEGIN: Underscore Template Definition. -->
+    <script type="text/template" class="template">
+
+
+          <section class="bereich">
+            <article class="kategorie row">
+              <div class="links col-lg-3"></div>
+              <div class="rechts col-lg-9"></div>
+            </article>
+          </section>
+
+        <h2>
+            <%- rc.listTitle %>
+        </h2>
+ 
+        <ul>
+            <% _.each( rc.listItems, function( listItem ){ %>
+ 
+                <li>
+ 
+                    <%- listItem.name %>
+ 
+                    <% if ( listItem.hasOlympicGold ){ %>
+                        <em>*</em>
+                    <% } %>
+ 
+                </li>
+ 
+            <% }); %>
+        </ul>
+ 
+ 
+        <% var showFootnote = _.any(
+            _.pluck( rc.listItems, "hasOlympicGold" )
+        ); %>
+ 
+ 
+        <% if ( showFootnote ){ %>
+ 
+            <p style="font-size: 12px ;">
+ 
+                <em>* Olympic gold medalist</em>
+ 
+            </p>
+ 
+        <% } %>
+ 
+    </script>
+    <!-- END: Underscore Template Definition. -->
+    </script>
+    <script type="text/javascript">
+      _.templateSettings.variable = "skillprofil";
+      var template = _.template(
+              $( "script.template" ).html()
+      );
+      var templateData = {
+            person: {
+              bereich: "Basisdaten";
+                daten: {
+                name: "Trebbin";
+                vorname: "Sascha";
+                geburtsdatum: "06.02.1988";  
+              };
+              
+              bereich: "Zertifizierungen": {
+                "Microsoft": {
+                  "640": true;
+                  "642": true;
+                  "646": true;
+                  "413": true
+                };
+                "Citrix": {
+                  "1Y0-A20": false
+                }
+              }
+            }
+        };
+    </script>
+   
+
 
     <!-- Optionally enable responsive features in IE8 -->
     <!--<script src="js/respond.js"></script>-->
-    <script type="text/javascript">
-      function resizeSideBar() {
-        window_h = $(window).height();
-        // slider-h = $('i.icon-angle-left').height(); / 2;
-       $('aside.col-lg-3>div.sidebar').css({'height': window_h});
-       $('aside.col-lg-3>div.sidebar-slider').css({'height': window_h});
-       // $('i.icon-angle-left').
-      }
-      
-      $(document).ready(function(){
-        resizeSideBar();
-      });
-
-      window.onresize = function(event) {
-        resizeSideBar();
-      }
-
-      
-    </script>
   </body>
 </html>
