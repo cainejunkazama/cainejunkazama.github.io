@@ -1,124 +1,107 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Curriculum Vitae</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="res/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="res/css/custom.css" rel="stylesheet" media="screen">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <header class="dokumentendaten" id="kopfzeile">
-          
-        </header>
-        <div id="dokument">
-          <section class="bereich">
-            <article class="kategorie row">
-              <div class="links col-lg-3"></div>
-              <div class="rechts col-lg-9"></div>
-            </article>
-          </section>
+<head>
+	<title>Curriculum Vitae</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap -->
+	<link href="res/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="res/css/custom.css" rel="stylesheet" media="screen">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<header class="dokumentendaten" id="kopfzeile">
+				
+			</header>
+			<div id="dokument">
+				<section class="bereich">
+					<article class="kategorie row">
+						<div class="links col-lg-3"></div>
+						<div class="rechts col-lg-9"></div>
+					</article>
+				</section>
 
-        </div>
+			</div>
 
-        <footer class="dokumentendaten" id="fusszeile">
-          
-        </footer>
-      </div>
-    </div>
+			<footer class="dokumentendaten" id="fusszeile">
+				
+			</footer>
+		</div>
+	</div>
 
-    <!-- JavaScript plugins (requires jQuery) -->
-    <script src="//use.edgefonts.net/source-code-pro.js"></script>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="res/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
-    <script type="text/template">
-       <!-- BEGIN: Underscore Template Definition. -->
-    <script type="text/template" class="template">
+	<!-- JavaScript plugins (requires jQuery) -->
+	<script src="//use.edgefonts.net/source-code-pro.js"></script>
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="res/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
+	<script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+	<script src="http://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js"></script>
 
+	<!-- BEGIN: Underscore Template Definition. -->
+	<script type="text/template" id="bereich-template">
+	<section class="bereich">
+	<article class="kategorie row">
+	<div class="links col-lg-3"></div>
+	<div class="rechts col-lg-9"></div>
+	</article>
+	</section>
+	</script>
+	<!-- END: Underscore Template Definition. -->
 
-          <section class="bereich">
-            <article class="kategorie row">
-              <div class="links col-lg-3"></div>
-              <div class="rechts col-lg-9"></div>
-            </article>
-          </section>
+	<script type="text/javascript">
+			//NAMESPCING APP
+			var App = App || {
+				Models : {},
+				Collections: {},  
+				Views: {},
+				Router: {}
+			};
+			
+			//DECLARING MODEL
+			App.Models.Person = Backbone.Model.extend({});
+			App.Models.Bereich = Backbone.Model.extend({});
 
-        <h2>
-            <%- rc.listTitle %>
-        </h2>
- 
-        <ul>
-            <% _.each( rc.listItems, function( listItem ){ %>
- 
-                <li>
- 
-                    <%- listItem.name %>
- 
-                    <% if ( listItem.hasOlympicGold ){ %>
-                        <em>*</em>
-                    <% } %>
- 
-                </li>
- 
-            <% }); %>
-        </ul>
- 
- 
-        <% var showFootnote = _.any(
-            _.pluck( rc.listItems, "hasOlympicGold" )
-        ); %>
- 
- 
-        <% if ( showFootnote ){ %>
- 
-            <p style="font-size: 12px ;">
- 
-                <em>* Olympic gold medalist</em>
- 
-            </p>
- 
-        <% } %>
- 
-    </script>
-    <!-- END: Underscore Template Definition. -->
-    </script>
-    <script type="text/javascript">
-      _.templateSettings.variable = "skillprofil";
-      var template = _.template(
-              $( "script.template" ).html()
-      );
-      var templateData = {
-            person: {
-              bereich: "Basisdaten";
-                daten: {
-                name: "Trebbin";
-                vorname: "Sascha";
-                geburtsdatum: "06.02.1988";  
-              };
-              
-              bereich: "Zertifizierungen": {
-                "Microsoft": {
-                  "640": true;
-                  "642": true;
-                  "646": true;
-                  "413": true
-                };
-                "Citrix": {
-                  "1Y0-A20": false
-                }
-              }
-            }
-        };
-    </script>
-   
+			// DECLARING Collection
+			App.Collections.Bereiche = Backbone.Collection.extend({
+				model: App.Models.Bereich
+			});
+
+			// DECLARING VIEW
+			App.Views.Bereich = Backbone.View.extend({
+				tagName: 'section',
+				template: _.template( $('#bereich-template').html() ),
+
+				render: function() {
+      		this.$el.html( this.template( this.model.toJSON() ) );
+      		return this;
+    		},
+			});
+
+			App.Views.Bereiche = Backbone.View.extend({
+				el: '#dokument',
+				initialize: function(){
+					_.bindAll(this);
+					this.collection = new App.Collections.Bereiche;
+					this.collection.on('reset', this.render, this);
+				},
+				render: function(){
+					var posts = this.collection.models[0].attributes; //actual response as the format is not the best
+					console.log(posts);
+					var template = _.template( $("#posts_template").html(), posts );
+					this.$el.html( template );
+					return this;
+				}
+				
+			});
 
 
-    <!-- Optionally enable responsive features in IE8 -->
-    <!--<script src="js/respond.js"></script>-->
-  </body>
+			App.blogView = new App.Views.Blog({el: $('#posts-container')});
+			</script>
+
+			<!-- Optionally enable responsive features in IE8 -->
+			<!--<script src="js/respond.js"></script>-->
+</body>
 </html>
