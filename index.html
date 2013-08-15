@@ -1,56 +1,156 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>IT-Skillprofil</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="res/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="res/css/custom.css" rel="stylesheet" media="screen">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>IT-Skillprofil</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="res/css/bootstrap.css" rel="stylesheet">
+    <link href="res/css/custom.css" rel="stylesheet">
   </head>
+
   <body>
     <div class="container">
-    <div class="row">
-        <section class="col-lg-12 category-container">
-          <div class="col-lg-6"><h3 class="pull-left">IT-Skillprofil</h3></div>
-          <div class="col-lg-6"><h3 class="pull-right">Sascha Trebbin</h3></div>
-          <hr class="big">
-        </section>
-        <section class="col-lg-12 category-container">
-          <div class="col-lg-4"><span class="pull-left"><img class="img-polaroid" src="http://placehold.it/350x150"></span></div>
-          <div class="col-lg-4"><span></span></div>
-          <div class="col-lg-4"><span></span></div>
-        </section>
-        <section class="col-lg-12 category-container">
-          <div class="col-lg-4"><span class="category">Angaben zur Person</span></div>
-          <div class="col-lg-4"><span class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, laudantium, perspiciatis, facere distinctio unde vel quis tempora quae eius nobis reprehenderit earum doloribus deleniti at soluta natus dolore recusandae delectus.</span></div>
-          <div class="col-lg-4"><span class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio magnam hic error itaque ab tempore minima. Laudantium, deleniti, excepturi voluptatem blanditiis beatae repellat distinctio incidunt illo itaque adipisci temporibus quos.</span></div>
-        </section>
-        <section class="col-lg-12 category-container">
-          <div class="col-lg-4"><span class="category">Schulbildung</span></div>
-          <div class="col-lg-4"><span class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, voluptate, iusto, suscipit mollitia ipsum labore totam dolorem atque blanditiis repellendus asperiores earum provident recusandae. Odio, quisquam quasi temporibus veritatis vitae.</span></div>
-          <div class="col-lg-4"><span class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum nostrum hic recusandae dolore debitis! Error, nesciunt, ab libero debitis quam placeat est perferendis at ipsa maxime quis eum cum consequuntur?</span></div>
-        </section>
-        <section class="col-lg-12 category-container">
-          <div class="col-lg-4"><span class="category">Berufserfahrung</span></div>
-          <div class="col-lg-4"><span class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, possimus, commodi ad numquam facilis suscipit quidem accusantium necessitatibus. Soluta, magnam, nemo id nihil unde optio magni ab rerum quia ducimus?</span></div>
-          <div class="col-lg-4"><span class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, earum illo ratione labore quam architecto ea reiciendis molestiae. Sint voluptatibus inventore ad earum recusandae eaque laborum. Doloribus, sit quisquam eos!</span></div>
-        </section>
-        <section class="col-lg-12 category-container">
-          <div class="col-lg-4"><span class="category">Weitere Angeben</span></div>
-          <div class="col-lg-4"><span class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, animi, sint, praesentium error a ipsum rerum iure iusto debitis earum harum fugiat repellat aspernatur maiores voluptas reprehenderit impedit. Blanditiis, similique?</span></div>
-          <div class="col-lg-4"><span class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cumque odit consectetur dolor suscipit ut tempora porro distinctio molestiae debitis? In, at, illum adipisci eum aperiam ducimus provident est doloribus!</span></div>
-        </section>
-    </div>
-    </div>
 
-    <!-- JavaScript plugins (requires jQuery) -->
-    <script src="//use.edgefonts.net/source-code-pro.js"></script>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="res/js/bootstrap.min.js"></script>
+      <div id="dokument">
 
-    <!-- Optionally enable responsive features in IE8 -->
-    <!--<script src="js/respond.js"></script>-->
+
+        <section class="bereich">
+          <article class="kategorie" id="basisangaben">
+            <div class="row">
+              <div class="col-lg-3 col-sm-12">
+                <div id="image centered">
+                  <img src="holder.js/150x200" class="img-thumbnail">
+                </div>
+              </div>
+              <div class="col-lg-9 col-sm-12">
+                <div class="spacer"></div>
+                <div class="text">Name:</div>
+                <div class="text">Trebbin</div>
+                <div class="text">Vorname:</div>
+                <div class="text">Sascha</div>
+                <div class="text">Geburtsdatum:</div>
+                <div class="text">06.02.1988</div>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="bereich">
+          <article class="kategorie" id="erweiterte-angaben">
+            <div class="row">
+              <div class="col-lg-3"></div>
+              <div class="col-lg-9">
+                <div class="text">Straße:</div>
+                <div class="text">Zwickauer Damm 12</div>
+                <div class="text">Postleitzahl:</div>
+                <div class="text">12353</div>
+                <div class="text">Ort:</div>
+                <div class="text">Berlin</div>
+                <div class="spacer"></div>
+                <div class="text">Telefon:</div>
+                <div class="text">+49 30 91451212</div>
+                <div class="text">Mobil:</div>
+                <div class="text">+49 152 55914465</div>
+                <div class="spacer"></div>
+                <div class="text">E-Mail</div>
+                <div class="text">saschatrebbin@live.de</div>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="bereich">
+          <article class="kategorie" id="zertifizierungen">
+            <div class="row">
+              <div class="col-lg-3">
+                <h2 class="ueberschrift">Zertifizierungen</h2>
+              </div>
+              <div class="col-lg-9">
+                <h2>Hersteller/Zertifikat</h2>
+                <h3>Microsoft</h3> 
+                <ul>
+                  <li>MCSA: Windows Server 2008</li>
+                  <li>MCTS: Active Directory Configuration</li>
+                  <li>MCTS: Network Infrastructure Configuration</li>
+                </ul>
+                <h3>Citrix</h3>
+                <ul>
+                  <li>CAA</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="bereich">
+          <article class="kategorie" id="schwerpunkte">
+            <div class="row">
+              <div class="col-lg-3">
+                <h2 class="ueberschrift">Schwerpunkte</h2>
+              </div>
+              <div class="col-lg-9">
+                <h2>&nbsp</h2>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="bereich">
+          <article class="kategorie" id="sprachen">
+            <div class="row">
+              <div class="col-lg-3">
+                <h2 class="ueberschrift">Sprachen</h2>
+              </div>
+              <div class="col-lg-9">
+                <h2 class="text">Sprache</h2>
+                <h2 class="text">Kenntnisse</h2>
+                <div class="text">Deutsch</div>
+                <div class="text">Muttersprache</div>
+                <div class="text">Englisch</div>
+                <div class="text">erweiterte Kenntnisse</div>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="bereich">
+          <article class="kategorie" id="ausbildung-erfahrung">
+            <div class="row">
+              <div class="col-lg-3">
+                <h2 class="ueberschrift">Erfahrung</h2>
+              </div>
+              <div class="col-lg-9">
+                <h2>&nbsp</h2>
+                <div class="text">2013</div>
+                <div class="text">Schulung V-Admin</div>
+                <div class="text">2012-2013</div>
+                <div class="text">Leerlauf</div>
+                <div class="text">2012</div>
+                <div class="text">ServiceDesk Bayer</div>
+                <div class="text">2011-2012</div>
+                <div class="text">Leerlauf</div>
+                <div class="text">2008 -2011</div>
+                <div class="text">Ausbildung IT-Systemkaufmann</div>
+                <div class="text">2006-2008</div>
+                <div class="text">Leerlauf</div>
+                <div class="text">2004-2006</div>
+                <div class="text">OSZ IMT</div>
+                <div class="text">1994-2004</div>
+                <div class="text">ESN</div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+
+      </div>
+
+    </div> <!-- /container -->
+    <script src="res/js/jquery.js"></script>
+    <script src="res/js/bootstrap.js"></script>
+    <script src="res/js/holder.js"></script>
+    <!-- <script src="//use.edgefonts.net/dhyana;kaffeesatz.js"></script> -->
+
   </body>
 </html>
